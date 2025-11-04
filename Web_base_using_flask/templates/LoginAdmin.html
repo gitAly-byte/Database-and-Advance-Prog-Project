@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<header>
+    <h1>WELCOME ADMIN!</h1>
+    <form method="POST">
+        <p>
+            {{ form.adminEmail.label }}<br>
+            {{ form.adminEmail(size=30) }}
+        </p>
+        <p>
+            {{ form.adminPassword.label }}<br>
+            {{ form.adminPassword(size=30) }}
+        </p>
+        <p> {{ form.submit() }}</p>
+        {% for field in form %}
+            {% for error in field.errors %}
+                <p style="color: red;">{{ error }}</p>
+            {% endfor %}
+        {% endfor %}
+    </form>
+    <a href="{{ url_for('index') }} ">Back to home page</a>
+
+</header>
+<body>
+    
+</body>
+</html>
