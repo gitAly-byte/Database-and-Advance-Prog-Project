@@ -21,6 +21,10 @@ def loginStudent():
     return render_template("LoginStudent.html", form=form)
 
 
+@app.route('/about')
+def about():
+    return render_template('AboutUs.html')
+
 class Admin(FlaskForm):
     adminEmail = StringField('Admin Email: ', validators=[DataRequired(), Length(min=1,max=20)])
     adminPassword = PasswordField('Admin Password: ', validators=[DataRequired(), Length(min=1,max=20)])
